@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "Building Assembly..."
+sbt assembly > /dev/null
+
+echo "Running..."
+hadoop jar target/cassandra-scalding-assembly-0.0.1.jar jobs."$1" --hdfs
